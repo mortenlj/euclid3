@@ -263,7 +263,11 @@ class Vector2(Slotted):
 
     def angle(self, other):
         """Return the angle to the vector other"""
-        return math.acos(self.dot(other) / (self.magnitude()*other.magnitude()))
+        return math.acos(self.dot(other) / (self.magnitude() * other.magnitude()))
+
+    def clockwise(self, other):
+        """Return true of other is clockwise to this vector"""
+        return -self.x*other.y + self.y*other.x > 0
 
     def project(self, other):
         """Return one vector projected on the vector other"""
