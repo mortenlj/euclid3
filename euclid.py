@@ -268,7 +268,7 @@ class Vector2(Slotted):
 
     def angle(self, other):
         """Return the angle to the vector other"""
-        return math.acos(self.dot(other) / (self.magnitude() * other.magnitude()))
+        return math.atan2(self.determinant(other), self.dot(other))
 
     def clockwise(self, other):
         """Return true of other is clockwise to this vector"""
